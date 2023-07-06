@@ -1,14 +1,39 @@
 {
+  "ts-node": {
+    "transpileOnly": true,
+    "require": [
+      "typescript-transform-paths/register"
+    ]
+  },
   "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "~/*": [
+        "./src/*"
+      ]
+    },
     "target": "ES2022",
     "module": "CommonJS",
     "moduleResolution": "node",
     "outDir": "./dist",
+    "rootDir": ".",
     "strict": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "plugins": [
+      {
+        "transform": "typescript-transform-paths"
+      }
+    ]
   },
-  "include": ["src/**/*"],
-  "exclude": ["**/*.spec.ts"]
+  "include": [
+    "package.json",
+    "src/**/*",
+    "*.ts"
+  ],
+  "exclude": [
+    "**/*.spec.ts"
+  ]
 }

@@ -1,3 +1,4 @@
-import 'dotenv/config';
+import '~/database/connection';
 
-console.log('Hello World!');
+const hello = 'Hello World!';
+console.log(hello);
