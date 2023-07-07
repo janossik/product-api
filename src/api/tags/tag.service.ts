@@ -13,11 +13,11 @@ export const tagService = {
 
   async readAll({ name, limit = 10, offset = 0 }: QueryNameLimitOffset) {
     if (name) {
-      const tags = await Tag.query().where('name', 'like', `%${name}%`).limit(limit).offset(offset);
+      const tags = await Tag.query().where('name', 'like', `%${name}%`).limit(Number(limit)).offset(Number(offset));
       return { tags: tags };
     }
 
-    const tags = await Tag.query().limit(limit).offset(offset);
+    const tags = await Tag.query().limit(Number(limit)).offset(Number(offset));
     return { tags };
   },
 
