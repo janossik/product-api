@@ -1,5 +1,6 @@
 import { ErrorWithStatus } from '~/error/error-with-status';
 import { Tag } from './tag.model';
+import { QueryNameLimitOffset } from '~/types/query';
 
 export const tagService = {
   async read(id: number | string) {
@@ -10,7 +11,7 @@ export const tagService = {
     };
   },
 
-  async readAll({ name, limit = 10, offset = 0 }: { name?: string; limit?: number; offset?: number }) {
+  async readAll({ name, limit = 10, offset = 0 }: QueryNameLimitOffset) {
     if (name) {
       const tags = await Tag.query().where('name', 'like', `%${name}%`).limit(limit).offset(offset);
       return { tags: tags };

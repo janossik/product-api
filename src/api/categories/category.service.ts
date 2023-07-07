@@ -1,4 +1,5 @@
 import { Category } from './category.model';
+import { QueryNameLimitOffset } from '~/types/query';
 
 export const categoryService = {
   async read(id: string | number) {
@@ -8,7 +9,7 @@ export const categoryService = {
     };
   },
 
-  async readAll({ name, limit = 10, offset = 0 }: { name?: string; limit?: number; offset?: number }) {
+  async readAll({ name, limit = 10, offset = 0 }: QueryNameLimitOffset) {
     if (name) {
       const category = await Category.query().where('name', 'like', `%${name}%`).limit(limit).offset(offset);
       return { category };

@@ -1,15 +1,15 @@
 import '~/config';
 import express from 'express';
 import ip from 'ip';
+import api from '~/api';
 import { errorHandler } from '~/error/error-handler';
-import tagRouter from '~/api/tags/tag.router';
 
 const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use('/api/tags', tagRouter);
+app.use('/api', api);
 
 app.all('*', (req, res) => {
   const { method, url } = req;
