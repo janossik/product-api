@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { tagController } from './tag.controller.js';
+import { tagController } from './tag.controller';
 import { validationMiddleware } from '~/middleware/validation.middleware';
 import { tagSchema } from './tag.schema';
 
