@@ -1,25 +1,25 @@
 ### GET request with a header
-GET http://localhost:3000/api/tags/1
+GET http://localhost:3000/api/categories/1
 Accept: application/json
 
 ### GET request with a header
-GET http://localhost:3000/api/tags
+GET http://localhost:3000/api/categories
 Accept: application/json
 
 ### GET request with parameter
-GET http://localhost:3000/api/tags?limit=2&offset=2
+GET http://localhost:3000/api/categories?limit=2&offset=2
 Accept: application/json
 
 ### Send POST request with json body
-POST http://localhost:3000/api/tags
+POST http://localhost:3000/api/categories
 Content-Type: application/json
 
 {
-  "name": "EJ-THC"
+  "name": "HWDP"
 }
 
 ### Send PUT request with json body
-PUT http://localhost:3000/api/tags
+PUT http://localhost:3000/api/categories
 Content-Type: application/json
 
 {
@@ -27,5 +27,5 @@ Content-Type: application/json
 }
 
 ### DELETE request with a header
-DELETE http://localhost:3000/api/tags/1
+DELETE http://localhost:3000/api/categories/3
 Accept: application/json
