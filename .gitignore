@@ -1,5 +1,6 @@
 # Files
 .env
+*.sqlite*
 
 # Directories
 .idea
