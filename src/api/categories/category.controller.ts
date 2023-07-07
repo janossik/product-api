@@ -1,4 +1,4 @@
-import { categoryService } from './category.service.js';
+import { categoryService } from './category.service';
 import { RequestHandler } from 'express';
 
 export const categoryController: Record<string, RequestHandler> = {

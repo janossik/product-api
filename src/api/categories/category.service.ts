@@ -1,4 +1,4 @@
-import { Category } from './category.model.js';
+import { Category } from './category.model';
 
 export const categoryService = {
   async read(id: string | number) {

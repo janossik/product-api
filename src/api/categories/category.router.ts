@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { categoryController } from './category.controller.js';
+import { categoryController } from './category.controller';
 import { categorySchema } from './category.schema';
 import { validationMiddleware } from '~/middleware/validation.middleware';
 
