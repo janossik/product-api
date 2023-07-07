@@ -11,11 +11,11 @@ export const productService = {
   },
   async readAll({ name, limit = 10, offset = 0 }: QueryNameLimitOffset) {
     if (name) {
-      const products = await Product.query().where('name', 'like', `%${name}%`).limit(limit).offset(offset);
+      const products = await Product.query().where('name', 'like', `%${name}%`).limit(Number(limit)).offset(Number(offset));
       return { products };
     }
 
-    const products = await Product.query().limit(limit).offset(offset);
+    const products = await Product.query().limit(Number(limit)).offset(Number(offset));
     return {
       products,
     };

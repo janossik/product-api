@@ -8,10 +8,10 @@ export const queryNameLimitOffsetSchema: AllowedSchema = {
       type: 'string',
     },
     limit: {
-      type: 'number',
+      type: ['string', 'number'],
     },
     offset: {
-      type: 'number',
+      type: ['string', 'number'],
     },
   },
 };

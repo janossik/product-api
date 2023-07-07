@@ -11,11 +11,11 @@ export const categoryService = {
 
   async readAll({ name, limit = 10, offset = 0 }: QueryNameLimitOffset) {
     if (name) {
-      const category = await Category.query().where('name', 'like', `%${name}%`).limit(limit).offset(offset);
+      const category = await Category.query().where('name', 'like', `%${name}%`).limit(Number(limit)).offset(Number(offset));
       return { category };
     }
 
-    const category = await Category.query().limit(limit).offset(offset);
+    const category = await Category.query().limit(Number(limit)).offset(Number(offset));
     return { category };
   },
 

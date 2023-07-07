@@ -18,7 +18,6 @@ app.all('*', (req, res) => {
 
 app.use(errorHandler);
 app.listen(Number(process.env.PORT) || 3000, '0.0.0.0', () => {
-  console.clear();
   console.log(`The application was started in ${process.env.NODE_ENV} mode at:\n`);
   console.log(`     http://${ip.address()}:${process.env.PORT}`);
   console.log(`     http://localhost:${process.env.PORT}`);

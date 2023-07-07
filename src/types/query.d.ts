@@ -1,5 +1,5 @@
 export interface QueryNameLimitOffset {
   name?: string;
-  limit?: number;
-  offset?: number;
+  limit?: string | number;
+  offset?: string | number;
 }

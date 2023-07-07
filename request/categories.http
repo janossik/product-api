@@ -1,0 +1,31 @@
+### GET request with a header
+GET http://localhost:3000/api/categories/1
+Accept: application/json
+
+### GET request with a header
+GET http://localhost:3000/api/categories
+Accept: application/json
+
+### GET request with parameter
+GET http://localhost:3000/api/categories?limit=2&offset=2
+Accept: application/json
+
+### Send POST request with json body
+POST http://localhost:3000/api/categories
+Content-Type: application/json
+
+{
+  "name": "HWDP"
+}
+
+### Send PUT request with json body
+PUT http://localhost:3000/api/categories
+Content-Type: application/json
+
+{
+  "name": "EJ-THC"
+}
+
+### DELETE request with a header
+DELETE http://localhost:3000/api/categories/3
+Accept: application/json

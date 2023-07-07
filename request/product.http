@@ -1,0 +1,35 @@
+### GET request with a header
+GET http://localhost:3000/api/products/1
+Accept: application/json
+
+### GET request with a header
+GET http://localhost:3000/api/products
+Accept: application/json
+
+### GET request with parameter
+GET http://localhost:3000/api/products?limit=2&offset=2
+Accept: application/json
+
+### Send POST request with json body
+POST http://localhost:3000/api/products
+Content-Type: application/json
+
+{
+  "name": "Rasberry Pi 4B",
+  "author": "m.czaniecki@gmail.pl",
+  "code": "2023AJ10491",
+  "description": "Rasberry Pi 4B 4GB RAM"
+}
+
+### Send PUT request with json body
+PUT http://localhost:3000/api/products/1
+Content-Type: application/json
+
+{
+  "name": "Rasberry Pi 4G",
+  "description": "Rasberry Pi 4B 4GB RAM"
+}
+
+### DELETE request with a header
+DELETE http://localhost:3000/api/products/1
+Accept: application/json
