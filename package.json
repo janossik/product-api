@@ -1,7 +1,7 @@
 {
   "name": "product-api",
   "version": "1.0.0",
-  "description": "",
+  "description": "API for cataloging products, tags and categories. Built with Node.js, Express and any database as knex and objection.js are used allowing for quick database changes. The project serves as a starter pack rather than a full solution.",
   "main": "src/index.js",
   "scripts": {
     "start": "npm i --production && node src/index.js",
