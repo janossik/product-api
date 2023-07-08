@@ -21,6 +21,24 @@ export const tagService = {
     return { tags };
   },
 
+  async readWithProduct(id: number | string) {
+    const tag = await Tag.query().findById(id).withGraphFetched('products');
+    if (!tag) throw new ErrorWithStatus('Tag not found', 404);
+    return {
+      tags: [tag],
+    };
+  },
+
+  async readAllWithProducts({ name, limit = 10, offset = 0 }: QueryNameLimitOffset) {
+    if (name) {
+      const tags = await Tag.query().withGraphFetched('products').where('name', 'like', `%${name}%`).limit(Number(limit)).offset(Number(offset));
+      return { tags: tags };
+    }
+
+    const tags = await Tag.query().withGraphFetched('products').limit(Number(limit)).offset(Number(offset));
+    return { tags };
+  },
+
   async create({ name }: { name: string }) {
     await Tag.query().insert({ name });
     return { message: 'Product created' };

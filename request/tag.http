@@ -3,11 +3,19 @@ GET http://localhost:3000/api/tags/1
 Accept: application/json
 
 ### GET request with a header
+GET http://localhost:3000/api/tags/1/product
+Accept: application/json
+
+### GET request with a header
 GET http://localhost:3000/api/tags
 Accept: application/json
 
 ### GET request with parameter
 GET http://localhost:3000/api/tags?limit=2&offset=2
+Accept: application/json
+
+### GET request with parameter
+GET http://localhost:3000/api/tags/products?limit=2&offset=0
 Accept: application/json
 
 ### Send POST request with json body

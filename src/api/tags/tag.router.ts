@@ -6,6 +6,10 @@ import { queryNameLimitOffsetSchema } from '~/schemas/query.schema';
 
 const tagRouter = Router();
 
+tagRouter.get('/:id/product', tagController.readWithProduct);
+
+tagRouter.get('/products', validationMiddleware({ query: queryNameLimitOffsetSchema }), tagController.readAllWithProducts);
+
 tagRouter.get('/:id', tagController.read);
 
 tagRouter.get('', validationMiddleware({ query: queryNameLimitOffsetSchema }), tagController.readAll);
