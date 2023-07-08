@@ -7,7 +7,11 @@ GET http://localhost:3000/api/products
 Accept: application/json
 
 ### GET request with parameter
-GET http://localhost:3000/api/products?limit=2&offset=2
+GET http://localhost:3000/api/products?limit=2&offset=2&withTags=true&withCategories=true
+Accept: application/json
+
+### GET request with parameter and tag
+GET http://localhost:3000/api/products?tag=P&limit=2&offset=0
 Accept: application/json
 
 ### Send POST request with json body
@@ -17,7 +21,7 @@ Content-Type: application/json
 {
   "name": "Rasberry Pi 4B",
   "author": "m.czaniecki@gmail.pl",
-  "code": "2023AJ10491",
+  "code": "202z3AJ10491",
   "description": "Rasberry Pi 4B 4GB RAM"
 }
 
@@ -27,7 +31,8 @@ Content-Type: application/json
 
 {
   "name": "Rasberry Pi 4G",
-  "description": "Rasberry Pi 4B 4GB RAM"
+  "description": "Rasberry Pi 4B 4GB RAM",
+  "tag_id": 1
 }
 
 ### DELETE request with a header
