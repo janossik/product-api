@@ -2,7 +2,7 @@ import { Model } from 'objection';
 import { Product } from '../products/product.model';
 
 export class Category extends Model {
-  static tableName = 'category';
+  static tableName = 'categories';
 
   static relationMappings = {
     products: {
@@ -11,8 +11,8 @@ export class Category extends Model {
       join: {
         from: 'category.id',
         through: {
-          from: 'productsCategory.categoryId',
-          to: 'productsCategory.productId',
+          from: 'productsCategories.categoryId',
+          to: 'productsCategories.productId',
         },
         to: 'products.categoryId',
       },

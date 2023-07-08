@@ -7,7 +7,7 @@ export async function up(knex: Knex): Promise<void> {
       table.string('name').notNullable().unique();
       table.timestamps(false, true);
     })
-    .createTable('category', (table) => {
+    .createTable('categories', (table) => {
       table.increments('id').primary();
       table.string('name').notNullable().unique();
       table.timestamps(false, true);
@@ -30,7 +30,7 @@ export async function up(knex: Knex): Promise<void> {
       table.integer('tag_id').unsigned().notNullable();
       table.foreign('tag_id').references('id').inTable('tags').onDelete('CASCADE');
     })
-    .createTable('products_category', (table) => {
+    .createTable('products_categories', (table) => {
       table.increments('id').primary();
       table.timestamps(false, true);
 
@@ -38,15 +38,15 @@ export async function up(knex: Knex): Promise<void> {
       table.foreign('product_id').references('id').inTable('products');
 
       table.integer('category_id').unsigned().notNullable();
-      table.foreign('category_id').references('id').inTable('category').onDelete('CASCADE');
+      table.foreign('category_id').references('id').inTable('categories').onDelete('CASCADE');
     });
 }
 
 export async function down(knex: Knex): Promise<void> {
   await knex.schema
-    .dropTableIfExists('products_category')
+    .dropTableIfExists('products_categories')
     .dropTableIfExists('products_tags')
     .dropTableIfExists('products')
-    .dropTableIfExists('category')
+    .dropTableIfExists('categories')
     .dropTableIfExists('tags');
 }
