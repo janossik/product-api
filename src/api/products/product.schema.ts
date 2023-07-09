@@ -17,6 +17,12 @@ export const productCreatedSchema: AllowedSchema = {
     description: {
       type: 'string',
     },
+    tag_id: {
+      type: 'number',
+    },
+    category_id: {
+      type: 'number',
+    },
   },
 };
 
@@ -35,6 +41,65 @@ export const productUpdatedSchema: AllowedSchema = {
     },
     description: {
       type: 'string',
+    },
+    tag_id: {
+      type: 'number',
+    },
+    category_id: {
+      type: 'number',
+    },
+  },
+};
+
+export const queryProductSchema: AllowedSchema = {
+  type: 'object',
+  additionalProperties: false,
+  properties: {
+    tag: {
+      type: 'string',
+    },
+    name: {
+      type: 'string',
+    },
+    withCategories: {
+      anyOf: [
+        {
+          type: 'boolean',
+        },
+        {
+          type: 'string',
+        },
+      ],
+    },
+    withTags: {
+      anyOf: [
+        {
+          type: 'boolean',
+        },
+        {
+          type: 'string',
+        },
+      ],
+    },
+    limit: {
+      anyOf: [
+        {
+          type: 'number',
+        },
+        {
+          type: 'string',
+        },
+      ],
+    },
+    offset: {
+      anyOf: [
+        {
+          type: 'number',
+        },
+        {
+          type: 'string',
+        },
+      ],
     },
   },
 };

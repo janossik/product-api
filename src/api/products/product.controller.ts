@@ -8,7 +8,7 @@ export const productController: Record<string, RequestHandler> = {
     res.json(data);
   },
   readAll: async (req, res) => {
-    const data = await productService.readAll(req.query);
+    const data = await productService.readAll({ ...req.query, withCategories: Boolean(req.query?.addCategories), withTags: Boolean(req.query?.addTags) });
     res.json(data);
   },
   create: async (req, res) => {

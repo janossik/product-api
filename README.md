@@ -11,6 +11,9 @@ Returns a list of products.
 - `offset` - The offset to start returning products from. Defaults to 0
 - `limit` - The number of products to return per page. Defaults to 10.
 - `name` - A search term to filter products by name.
+- `tag` - Search term to filter products by tag.
+- `withTags` - Added tags to filter;
+- `withCategories` - Added categories to filter;
 
 ### GET `/products/:id`
 Returns a single product by id.
@@ -48,8 +51,19 @@ Returns a list of tags.
 - `limit` - The number of tags to return per page. Defaults to 10.
 - `name` - A search term to filter tags by name.
 
+### GET `/tags/products`
+Returns a list of tags with products.
+
+#### Query Parameters
+- `offset` - The offset to start returning tags from. Defaults to 0
+- `limit` - The number of tags to return per page. Defaults to 10.
+- `name` - A search term to filter tags by name.
+
 ### GET `/tags/:id`
 Returns a single tag by id.
+
+### GET `/tags/:id/products`
+Returns a single tag with products by id.
 
 ### POST `/tags`
 Creates a new tag.

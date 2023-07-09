@@ -11,6 +11,15 @@ export const tagController: Record<string, RequestHandler> = {
     const data = await tagService.readAll(req.query);
     res.json(data);
   },
+  readWithProduct: async (req, res) => {
+    const id = req.params.id;
+    const data = await tagService.readWithProduct(id);
+    res.json(data);
+  },
+  readAllWithProducts: async (req, res) => {
+    const data = await tagService.readAllWithProducts(req.query);
+    res.json(data);
+  },
   create: async (req, res) => {
     const data = await tagService.create(req.body);
     res.json(data);

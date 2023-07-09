@@ -1,6 +1,6 @@
 import Knex from 'knex';
 import { Model, knexSnakeCaseMappers } from 'objection';
-import knexConfig from '~/config/knexfile';
+import knexConfig from '~/../knexfile';
 
 const env = process.env.NODE_ENV || 'development';
 

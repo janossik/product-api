@@ -1,14 +1,13 @@
 import { Router } from 'express';
 import { productController } from './product.controller';
 import { validationMiddleware } from '~/middleware/validation.middleware';
-import { productCreatedSchema, productUpdatedSchema } from '~/api/products/product.schema';
-import { queryNameLimitOffsetSchema } from '~/schemas/query.schema';
+import { productCreatedSchema, productUpdatedSchema, queryProductSchema } from '~/api/products/product.schema';
 
 const productRouter = Router();
 
 productRouter.get('/:id', productController.read);
 
-productRouter.get('', validationMiddleware({ query: queryNameLimitOffsetSchema }), productController.readAll);
+productRouter.get('', validationMiddleware({ query: queryProductSchema }), productController.readAll);
 
 productRouter.post('', validationMiddleware({ body: productCreatedSchema }), productController.create);
 

@@ -1,10 +1,10 @@
 import { Knex } from 'knex';
 
 export async function seed(knex: Knex) {
-  await knex('products_category').del();
+  await knex('products_categories').del();
   await knex('products_tags').del();
   await knex('products').del();
-  await knex('category').del();
+  await knex('categories').del();
   await knex('tags').del();
 
   await knex('tags').insert([
@@ -14,7 +14,7 @@ export async function seed(knex: Knex) {
     { id: 4, name: 'PJ-POS' },
   ]);
 
-  await knex('category').insert([
+  await knex('categories').insert([
     { id: 1, name: 'special' },
     { id: 2, name: 'rail' },
   ]);
@@ -50,7 +50,7 @@ export async function seed(knex: Knex) {
     { id: 3, tag_id: 1, product_id: 3 },
   ]);
 
-  await knex('products_category').insert([
+  await knex('products_categories').insert([
     { id: 1, category_id: 2, product_id: 1 },
     { id: 2, category_id: 2, product_id: 2 },
   ]);
